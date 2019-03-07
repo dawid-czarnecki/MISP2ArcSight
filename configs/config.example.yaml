@@ -1,0 +1,6 @@
+misp-url: https://localhost
+misp-key: KEYKEYKEYKEYKEYKEYKEYKEYKEYKEYKEYKEYKEYK
+misp-no-verify-cert: true
+arcsight-url: https://localhost:8443
+arcsight-username: admin
+arcsight-password: password

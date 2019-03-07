@@ -1,0 +1,61 @@
+# In this example there are two active lists: IPList and StringList
+- name: IPList
+  id: AAAAAAAAAAAAAAAAAAAAAAA==
+  key: type
+  value:
+    - ip
+    - ip-src
+    - ip-dst
+  map:
+  - misp: value
+    arcsight: ip
+  - misp: type
+    arcsight: type
+  - misp: category
+    arcsight: category
+  - misp: Event.orgc_name
+    arcsight: organization
+  - misp: timestamp
+    arcsight: entryTimestamp
+    convert: timestampToEpoch
+  - misp: Event.publish_timestamp
+    arcsight: publishedTimestamp
+    convert: timestampToEpoch
+  - misp: Event.threat_level_id
+    arcsight: threatLevel
+  - misp:
+    - Tag.name
+    arcsight: tag
+    merge: comma
+
+- name: StringList
+  id: BBBBBBBBBBBBBBBBBBBBBBB==
+  key: type
+  value:
+    - url
+    - hostname
+    - filename
+    - 'domain|ip'
+    - 'filename|md5'
+  map:
+  - misp: value
+    arcsight: string
+  - misp: type
+    arcsight: type
+  - misp: category
+    arcsight: category
+  - misp: Event.orgc_name
+    arcsight: organization
+  - misp: timestamp
+    arcsight: entryTimestamp
+    convert: timestampToEpoch
+  - misp: Event.publish_timestamp
+    arcsight: publishedTimestamp
+    convert: timestampToEpoch
+  - misp: Event.threat_level_id
+    arcsight: threatLevel
+  - misp:
+    - Tag.name
+    - Event.Tag.name
+    arcsight: tag
+    merge: comma

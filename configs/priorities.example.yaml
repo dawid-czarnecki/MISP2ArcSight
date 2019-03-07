@@ -1,0 +1,5 @@
+organisations:
+  - name: "Main org"
+    priority: 1
+  - name: ThirdOrg
+    priority: 2

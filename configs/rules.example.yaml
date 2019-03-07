@@ -1,0 +1,37 @@
+# This is the example of rules file
+# It will build the following condition:
+# (Event.published = True AND deleted = False) AND (type IN [ip-src, ip-dst, url, ...] OR comment MATCH REGEXP "new.*comment")
+
+operator: '&'
+components: 
+- operator: "&"
+  components:
+  - field: Event.published
+    condition: "="
+    value: true
+  - field: deleted
+    condition: "="
+    value: false
+  - field: Event.Org.name
+    condition: "="
+    value: 'SecondOrg'
+- operator: "|"
+  components:
+  - field: type
+    condition: "[]"
+    value:
+    - ip-src
+    - ip-dst
+    - url
+    - hostname
+    - filename
+    - domain|ip
+    - filename|md5
+  - operator: "&"
+    components:
+    - field: comment
+      condition: "!r"
+      value: "new.*comment"
+    - field: comment
+      condition: "!="
+      value: ""

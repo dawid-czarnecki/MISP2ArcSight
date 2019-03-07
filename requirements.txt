@@ -1,0 +1,4 @@
+simplejson
+requests
+pyyaml
+pyasesm

@@ -1,0 +1,9 @@
+configs/*
+!configs/config.example.yaml
+!configs/map.example.yaml
+!configs/priorities.example.yaml
+!configs/rules.example.yaml
+logs/*
+*.pyc
+*__pycache__*
+# classes/*.pyc
